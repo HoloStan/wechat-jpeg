@@ -1,6 +1,11 @@
 # 微信小程序 jpeg 编码/解码
 基于 picojpeg 和 stb_image 重新编译的可用于微信小程序的图片编码器
 
+编译命令
+```
+emcc jpeg.c -O3 -o jpeg.wasm -s EXPORTED_FUNCTIONS=["_decode_jpeg_rgba","_encode_jpeg_rgba","_free_buffer"] --no-entry -s INITIAL_MEMORY=64MB 
+```
+
 # picojpeg
 Exported from http://code.google.com/p/picojpeg. Original author is Rich Geldreich at *richgel99 at gmail.com*.
 
