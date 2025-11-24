@@ -3,7 +3,7 @@
 
 编译命令
 ```
-emcc jpeg.c -O3 -o jpeg.wasm -s EXPORTED_FUNCTIONS=["_decode_jpeg_rgba","_encode_jpeg_rgba","_free_buffer"] --no-entry -s INITIAL_MEMORY=64MB 
+emcc picojpeg.c jpeg.c -o jpeg.wasm -s EXPORTED_FUNCTIONS="['_jpeg_probe','_jpeg_get_width','_jpeg_get_height','_jpeg_get_comps','_jpeg_decode_rgba','_jpeg_encode_rgba','_jpeg_free_buffer','_malloc','_free']" --no-entry -O3 -s INITIAL_MEMORY=64MB
 ```
 
 # picojpeg
